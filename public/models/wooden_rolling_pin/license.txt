@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wooden Rolling Pin
+* source:	https://sketchfab.com/3d-models/wooden-rolling-pin-e5d077535f1241d39121d5c87c65bfaa
+* author:	GameDev Nick (https://sketchfab.com/GameDevNick)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wooden Rolling Pin" (https://sketchfab.com/3d-models/wooden-rolling-pin-e5d077535f1241d39121d5c87c65bfaa) by GameDev Nick (https://sketchfab.com/GameDevNick) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

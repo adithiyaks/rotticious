@@ -1,0 +1,6 @@
+{
+  "name": "Rotticious",
+  "description": "Premium 3D Scroll-Driven Cinematic Experience for Rotticious Cafe-Bakery",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

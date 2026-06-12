@@ -1,0 +1,11 @@
+Model Information:
+* title:	coffe bean
+* source:	https://sketchfab.com/3d-models/coffe-bean-bba21b0e03d4459698b315772d6afbb5
+* author:	movsummemmedzade3 (https://sketchfab.com/movsummemmedzade3)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "coffe bean" (https://sketchfab.com/3d-models/coffe-bean-bba21b0e03d4459698b315772d6afbb5) by movsummemmedzade3 (https://sketchfab.com/movsummemmedzade3) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

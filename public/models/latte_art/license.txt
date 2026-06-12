@@ -1,0 +1,11 @@
+Model Information:
+* title:	Latte Art
+* source:	https://sketchfab.com/3d-models/latte-art-d16ea34d3d724e71893a28bae1a30b46
+* author:	KamillaKraus (https://sketchfab.com/KamillaKraus)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Latte Art" (https://sketchfab.com/3d-models/latte-art-d16ea34d3d724e71893a28bae1a30b46) by KamillaKraus (https://sketchfab.com/KamillaKraus) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

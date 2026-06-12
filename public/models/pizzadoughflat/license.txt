@@ -1,0 +1,11 @@
+Model Information:
+* title:	Pizzadoughflat
+* source:	https://sketchfab.com/3d-models/pizzadoughflat-a8137aa1f8964732b25e961b789fddf4
+* author:	Mmmighty_Atom (https://sketchfab.com/Mmmighty_Atom)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Pizzadoughflat" (https://sketchfab.com/3d-models/pizzadoughflat-a8137aa1f8964732b25e961b789fddf4) by Mmmighty_Atom (https://sketchfab.com/Mmmighty_Atom) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

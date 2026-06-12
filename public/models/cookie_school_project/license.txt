@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cookie (School Project)
+* source:	https://sketchfab.com/3d-models/cookie-school-project-434b04afb75d4525ae5eb272282d736d
+* author:	Ole Gunnar Isager (https://sketchfab.com/FrenchBaguette)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cookie (School Project)" (https://sketchfab.com/3d-models/cookie-school-project-434b04afb75d4525ae5eb272282d736d) by Ole Gunnar Isager (https://sketchfab.com/FrenchBaguette) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

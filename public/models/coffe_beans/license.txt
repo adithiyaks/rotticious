@@ -1,0 +1,8 @@
+Model Information:
+* title:	coffe beans
+* source:	https://sketchfab.com/3d-models/coffe-beans-a58bd496182a47fd8a0331d2bc86872e
+* author:	caramelll (https://sketchfab.com/caramelll)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works
