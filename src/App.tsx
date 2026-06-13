@@ -6,6 +6,9 @@
 import { useState, useEffect, useRef } from 'react';
 import Scene3D from './components/Scene3D';
 import ContentOverlay from './components/ContentOverlay';
+import FloatingCart from './components/FloatingCart';
+import FullMenuModal from './components/FullMenuModal';
+import { CartProvider } from './contexts/CartContext';
 import { Sparkles, Volume2, VolumeX, Eye, Info, Coffee } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -80,7 +83,8 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative w-full text-[#E0D8D0] overflow-x-hidden selection:bg-[#D2A078]/30 selection:text-[#E0D8D0]">
+    <CartProvider>
+      <div className="relative w-full text-[#E0D8D0] overflow-x-hidden selection:bg-[#D2A078]/30 selection:text-[#E0D8D0]">
       
       {/* 1. FIXED BACKPROPAGATED 3D WEBGL ENGINE CANVAS */}
       <Scene3D activeCategoryIndex={activeCategoryIndex} />
@@ -125,6 +129,12 @@ export default function App() {
           <span>BAKERY STOREFRONT ONLINE</span>
         </div>
       </div>
+
+      {/* FLOATING CART — always accessible, premium position */}
+      <FloatingCart />
+
+      {/* FULL MENU MODAL — popup triggered by any Order button */}
+      <FullMenuModal />
 
       {/* 4. INTRO LUXURY SCREEN TRANSITION & LOADER */}
       <AnimatePresence>
@@ -171,5 +181,6 @@ export default function App() {
       </AnimatePresence>
 
     </div>
+    </CartProvider>
   );
 }

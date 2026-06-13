@@ -3,10 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useRef, useEffect, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import { SCROLL_SECTIONS } from '../types';
 import InteractiveMenu from './InteractiveMenu';
-import { ChevronDown, MapPin, Clock, Phone, ArrowUp, Instagram, Coffee, Heart } from 'lucide-react';
+import OrderSection from './OrderSection';
+import SocialProof from './SocialProof';
+import { ChevronDown, MapPin, Clock, Phone, ArrowUp, Instagram, Heart, Navigation, ShoppingBag, ChefHat } from 'lucide-react';
+import { useCart } from '../contexts/CartContext';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -102,6 +105,8 @@ export default function ContentOverlay({ onCategoryChange, activeCategoryIndex }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const { setMenuModalOpen } = useCart();
+
   return (
     <div ref={containerRef} className="w-full relative z-10 select-none">
       
@@ -128,13 +133,18 @@ export default function ContentOverlay({ onCategoryChange, activeCategoryIndex }
         <span className="font-serif italic font-normal tracking-[0.1em] text-[#E0D8D0] text-xl cursor-pointer hover:text-white transition-colors duration-300">
           rotticious<span className="text-[#D2A078]">.</span>
         </span>
-        <div className="flex items-center gap-6 text-[10px] uppercase font-display tracking-[0.25em] text-[#E0D8D0]/80">
+        <div className="flex items-center gap-4 text-[10px] uppercase font-display tracking-[0.25em] text-[#E0D8D0]/80">
           <span className="hidden sm:inline-block">Specialty Cafe</span>
           <span className="hidden sm:inline-block">•</span>
           <span className="hidden sm:inline-block">Hand-Laminated Dough</span>
-          <span className="bg-white/5 border border-white/10 px-4 py-2 rounded-sm backdrop-blur-md font-mono">
-            EST. 2024
-          </span>
+          <button
+            id="header-order-btn"
+            onClick={() => setMenuModalOpen(true)}
+            className="flex items-center gap-1.5 bg-[#D2A078]/15 border border-[#D2A078]/30 text-[#D2A078] px-4 py-2 rounded-sm backdrop-blur-md font-mono hover:bg-[#D2A078]/25 hover:border-[#D2A078]/60 transition-all duration-300 cursor-pointer mix-blend-normal"
+          >
+            <ChefHat className="w-3 h-3" />
+            <span>Order</span>
+          </button>
         </div>
       </header>
 
@@ -260,6 +270,12 @@ export default function ContentOverlay({ onCategoryChange, activeCategoryIndex }
         </div>
       </section>
 
+      {/* ORDER FROM ROTTICIOUS — Immersive ordering experience */}
+      <OrderSection />
+
+      {/* LOVED ACROSS CHENNAI — Social proof */}
+      <SocialProof />
+
       {/* SECTION 7: THE SIGNATURE (Logo Snap & Contact Footer) */}
       <section className="story-section min-h-[160vh] flex flex-col justify-between items-center px-6 pt-36 pb-12 text-center relative">
         <div className="absolute inset-x-0 bottom-0 h-[80vh] bg-[gradient-to-t,from-[#110603],to-[#1e0f09]] pointer-events-none" />
@@ -284,67 +300,111 @@ export default function ContentOverlay({ onCategoryChange, activeCategoryIndex }
           </h1>
         </div>
 
-        {/* Cinematic informational grid & Contact Footer */}
-        <div className="anim-extra w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 py-12 border border-white/10 bg-white/5 backdrop-blur-md rounded-sm p-8 relative z-20">
-          
-          {/* Location details */}
-          <div className="text-left space-y-3">
-            <div className="flex items-center gap-2 text-[#D2A078]">
-              <MapPin className="w-5 h-5" />
-              <h5 className="font-serif italic font-normal tracking-wider uppercase text-sm">Where To Sip</h5>
-            </div>
-            <p className="text-xs text-[#E0D8D0]/70 font-sans leading-relaxed">
-              314 Brickstone Boulevard,<br />
-              Artisanal Sector, District 7<br />
-              New Delhi, India
-            </p>
-            <p className="text-[10px] text-[#E0D8D0]/40 font-mono">
-              Adjacent to Craftsman kiln gallery
-            </p>
-          </div>
+        {/* Premium floating contact info + action buttons */}
+        <div className="anim-extra w-full max-w-4xl relative z-20 space-y-8">
 
-          {/* Timings */}
-          <div className="text-left space-y-3">
-            <div className="flex items-center gap-2 text-[#D2A078]">
-              <Clock className="w-5 h-5" />
-              <h5 className="font-serif italic font-normal tracking-wider uppercase text-sm">Kiln Hours</h5>
-            </div>
-            <div className="text-xs text-[#E0D8D0]/70 font-sans space-y-1">
-              <div className="flex justify-between">
-                <span>Espresso Bar</span>
-                <span className="font-mono">07:00 AM – 10:00 PM</span>
+          {/* Location + hours info strip */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 border border-white/8 bg-white/3 backdrop-blur-md rounded-sm">
+            <div className="text-left space-y-2">
+              <div className="flex items-center gap-2 text-[#D2A078]">
+                <MapPin className="w-4 h-4" />
+                <h5 className="font-serif italic font-normal tracking-wider uppercase text-xs">Find Us</h5>
               </div>
-              <div className="flex justify-between">
-                <span>Belan Pastries</span>
-                <span className="font-mono">06:00 AM – Sold Out</span>
+              <p className="text-xs text-[#E0D8D0]/70 font-sans leading-relaxed">
+                Rotticious,<br />
+                Royapettah, Chennai
+              </p>
+            </div>
+            <div className="text-left space-y-2">
+              <div className="flex items-center gap-2 text-[#D2A078]">
+                <Clock className="w-4 h-4" />
+                <h5 className="font-serif italic font-normal tracking-wider uppercase text-xs">Hours</h5>
               </div>
-              <div className="flex justify-between">
-                <span>Artisan Bites</span>
-                <span className="font-mono">11:00 AM – 09:30 PM</span>
+              <div className="text-xs text-[#E0D8D0]/70 font-sans space-y-0.5">
+                <div className="flex justify-between gap-4"><span>Daily</span><span className="font-mono">08:00 AM – 10:00 PM</span></div>
+                <div className="flex justify-between gap-4"><span>Pastries</span><span className="font-mono">Until Sold Out</span></div>
               </div>
             </div>
-          </div>
-
-          {/* Social Reservation */}
-          <div className="text-left space-y-3">
-            <div className="flex items-center gap-3 text-[#D2A078]">
-              <Phone className="w-5 h-5" />
-              <h5 className="font-serif italic font-normal tracking-wider uppercase text-sm">Reservations</h5>
-            </div>
-            <p className="text-xs text-[#E0D8D0]/70 font-serif italic">
-              Dial: <a href="tel:+919876543210" className="text-[#D2A078] hover:underline font-mono font-normal not-italic">+91 98765 43210</a><br />
-              Write: <a href="mailto:hello@rotticious.com" className="text-[#D2A078] hover:underline">hello@rotticious.com</a>
-            </p>
-            <div className="flex items-center gap-4 pt-2">
-              <a href="#" className="text-[#E0D8D0]/50 hover:text-[#D2A078] transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-[#E0D8D0]/50 hover:text-[#D2A078] transition-colors">
-                <Coffee className="w-5 h-5" />
+            <div className="text-left space-y-2">
+              <div className="flex items-center gap-2 text-[#D2A078]">
+                <Phone className="w-4 h-4" />
+                <h5 className="font-serif italic font-normal tracking-wider uppercase text-xs">Call Us</h5>
+              </div>
+              <a
+                href="tel:+918754449754"
+                className="text-xs font-mono text-[#D2A078] hover:text-[#E0B590] transition-colors"
+              >
+                +91 87544 49754
               </a>
             </div>
           </div>
 
+          {/* Premium action buttons */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {/* Call Now */}
+            <a
+              id="contact-call-now"
+              href="tel:+918754449754"
+              className="group flex flex-col items-center gap-3 p-5 rounded-sm border border-white/10 bg-white/3 backdrop-blur-xl hover:border-[#D2A078]/50 hover:bg-[#D2A078]/8 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#D2A078]/10 transition-all duration-300"
+            >
+              <span className="w-10 h-10 rounded-sm border border-white/10 group-hover:border-[#D2A078]/40 bg-white/5 group-hover:bg-[#D2A078]/10 flex items-center justify-center transition-all duration-300">
+                <Phone className="w-4 h-4 text-[#E0D8D0]/60 group-hover:text-[#D2A078] transition-colors" />
+              </span>
+              <div className="text-center">
+                <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-[#E0D8D0]/70 group-hover:text-[#D2A078] transition-colors">Call Now</span>
+                <span className="block text-[9px] font-mono text-[#E0D8D0]/30 mt-0.5">+91 87544 49754</span>
+              </div>
+            </a>
+
+            {/* Get Directions */}
+            <a
+              id="contact-directions"
+              href="https://maps.app.goo.gl/3JRT7L227P6zc7mP8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3 p-5 rounded-sm border border-white/10 bg-white/3 backdrop-blur-xl hover:border-[#D2A078]/50 hover:bg-[#D2A078]/8 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#D2A078]/10 transition-all duration-300"
+            >
+              <span className="w-10 h-10 rounded-sm border border-white/10 group-hover:border-[#D2A078]/40 bg-white/5 group-hover:bg-[#D2A078]/10 flex items-center justify-center transition-all duration-300">
+                <Navigation className="w-4 h-4 text-[#E0D8D0]/60 group-hover:text-[#D2A078] transition-colors" />
+              </span>
+              <div className="text-center">
+                <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-[#E0D8D0]/70 group-hover:text-[#D2A078] transition-colors">Directions</span>
+                <span className="block text-[9px] font-mono text-[#E0D8D0]/30 mt-0.5">Royapettah, Chennai</span>
+              </div>
+            </a>
+
+            {/* Instagram */}
+            <a
+              id="contact-instagram"
+              href="https://www.instagram.com/rotticious"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-3 p-5 rounded-sm border border-white/10 bg-white/3 backdrop-blur-xl hover:border-[#D2A078]/50 hover:bg-[#D2A078]/8 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#D2A078]/10 transition-all duration-300"
+            >
+              <span className="w-10 h-10 rounded-sm border border-white/10 group-hover:border-[#D2A078]/40 bg-white/5 group-hover:bg-[#D2A078]/10 flex items-center justify-center transition-all duration-300">
+                <Instagram className="w-4 h-4 text-[#E0D8D0]/60 group-hover:text-[#D2A078] transition-colors" />
+              </span>
+              <div className="text-center">
+                <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-[#E0D8D0]/70 group-hover:text-[#D2A078] transition-colors">Instagram</span>
+                <span className="block text-[9px] font-mono text-[#E0D8D0]/30 mt-0.5">@rotticious</span>
+              </div>
+            </a>
+
+            {/* Order Online — opens full menu popup */}
+            <button
+              id="contact-order-online"
+              onClick={() => setMenuModalOpen(true)}
+              className="group flex flex-col items-center gap-3 p-5 rounded-sm border border-[#D2A078]/20 bg-[#D2A078]/5 backdrop-blur-xl hover:border-[#D2A078]/60 hover:bg-[#D2A078]/12 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#D2A078]/15 transition-all duration-300 cursor-pointer"
+            >
+              <span className="w-10 h-10 rounded-sm border border-[#D2A078]/30 group-hover:border-[#D2A078]/60 bg-[#D2A078]/10 group-hover:bg-[#D2A078]/20 flex items-center justify-center transition-all duration-300">
+                <ShoppingBag className="w-4 h-4 text-[#D2A078] transition-colors" />
+              </span>
+              <div className="text-center">
+                <span className="block text-[10px] font-mono uppercase tracking-[0.2em] text-[#D2A078] group-hover:text-[#E0B590] transition-colors">Order Online</span>
+                <span className="block text-[9px] font-mono text-[#D2A078]/50 mt-0.5">View Full Menu</span>
+              </div>
+            </button>
+          </div>
         </div>
 
         {/* Small Legal Disclaimer / Copyright */}
